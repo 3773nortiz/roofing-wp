@@ -1,0 +1,43 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<style>
+#ptgentabs-1,
+#ptgentabs-2,
+#ptgentabs-3{
+	padding:0px !important;
+	padding-left:0px !important;
+	padding-right:0px !important;
+}
+#acc1 input, #acc2 input{
+	font-size:10px;
+	}
+</style>
+<div id="ptgentabs">
+  <ul>
+    <li><a href="#ptgentabs-1">Button</a></li>
+    <li><a href="#ptgentabs-2">Ribbon</a></li>
+    <li><a href="#ptgentabs-3">ToolTip</a></li>
+  </ul>
+  <div id="ptgentabs-1">
+  <div id="gaccordion">
+    <h3><a href="#">Button</a></h3>
+    <div style="padding:0px;" id="acc1"> <?php $attr = array('ctl' => 'ChooseBtn', 'defaultCode'=>'{"bgTopColor":"#ededed","bgBottomColor":"#dfdfdf","fontColor":"#777777","borderColor":"#dcdcdc","boxShadowColor":"#ffffff","textShadowColor":"#ffffff","borderRadius":10,"borderSize":1,"boxShadow":true,"boxShadowBlurRadius":"0","boxShadowInset":"inset","boxShadowOffsetX":1,"boxShadowOffsetY":0,"boxShadowSpreadRadius":"0","customClass":"classname","fontFamily":"arial","fontSize":12,"fontWeight":"bold","paddingX":"6","paddingY":"24","textShadow":true,"textShadowBlurRadius":"0","textShadowOffsetX":"1","textShadowOffsetY":"1"}'); include('pricetable.button.phtml'); ?></div>
+    <h3><a href="#">Highlight Button</a></h3>
+    <div style="padding:0px;" id="acc2"><?php $attr = array('ctl' => 'ChooseBtnHighlighted', 'mini' => true, 'asso' => 'ChooseBtn', 'defaultCode'=>'{"bgTopColor":"#f24437","bgBottomColor":"#c62d1f","fontColor":"#ffffff","borderColor":"#d02718","boxShadowColor":"#f5978e","textShadowColor":"#810d05","borderRadius":10,"borderSize":1,"boxShadow":true,"boxShadowBlurRadius":"0","boxShadowInset":"inset","boxShadowOffsetX":1,"boxShadowOffsetY":0,"boxShadowSpreadRadius":"0","customClass":"classname","fontFamily":"arial","fontSize":12,"fontWeight":"bold","paddingX":"6","paddingY":"24","textShadow":true,"textShadowBlurRadius":"0","textShadowOffsetX":"1","textShadowOffsetY":"1"}'); include('pricetable.button.phtml'); ?></div>
+</div>
+ </div>
+  <div id="ptgentabs-2"><?php $attr = array('ctl' => 'Ribbon', 'defaultCode'=>'{"bgTopColor":"#f0cb11","bgBottomColor":"#f2ab1e","fontColor":"#c92200","borderColor":" #e65f44","boxShadowColor":"#000000","textShadowColor":"#ded17c","borderRadius":8,"borderSize":0,"boxShadow":true,"boxShadowBlurRadius":3,"boxShadowInset":"","boxShadowOffsetX":0,"boxShadowOffsetY":0,"boxShadowSpreadRadius":"0","customClass":"classname","fontFamily":"arial","fontSize":10,"fontWeight":"bold","paddingX":5,"paddingY":0,"textShadow":true,"textShadowBlurRadius":"0","textShadowOffsetX":"1","textShadowOffsetY":"1"}'); include('pricetable.ribbon.phtml'); ?></div>
+  <div id="ptgentabs-3"><?php $attr = array('ctl' => 'ToolTip', 'defaultCode'=>'{"bgTopColor":"#feffc2","bgBottomColor":"#f6f6f6","fontColor":"#666666","borderColor":"#dcdcdc","boxShadowColor":"#ffffff","textShadowColor":"#ffffff","borderRadius":10,"borderSize":1,"boxShadow":true,"boxShadowBlurRadius":"0","boxShadowInset":"inset","boxShadowOffsetX":1,"boxShadowOffsetY":0,"boxShadowSpreadRadius":"0","customClass":"classname","fontFamily":"arial","fontSize":11,"fontWeight":"bold","paddingX":5,"paddingY":5,"textShadow":true,"textShadowBlurRadius":"0","textShadowOffsetX":"1","textShadowOffsetY":"1","indicatorColor":"#878787"}'); include('pricetable.tooltip.phtml'); ?></div>
+</div>
+<script language="javascript">
+jQuery(document).ready(function(jQuery){
+jQuery( "#ptgentabs" ).tabs();
+jQuery( "#gaccordion" ).accordion({
+			collapsible: true
+		});
+jQuery('#preview-action').hide();
+});
+</script>

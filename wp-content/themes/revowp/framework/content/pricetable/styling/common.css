@@ -1,0 +1,400 @@
+/* 
+        ///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////
+
+*/
+@font-face {
+ font-family: CarbonBlock;
+ src: url('CarbonBlock.ttf');
+}
+
+@font-face {
+ font-family: Gothic;
+ src: url('Gothic.ttf');
+}
+
+@font-face {
+ font-family: JandaManateeSolid;
+ src: url('JandaManateeSolid.ttf');
+}
+
+@font-face {
+ font-family: junegull;
+ src: url('junegull.ttf');
+}
+.pricetable {
+	font-size: 0px;
+	text-align: center;
+	vertical-align: top;
+	white-space: normal;
+}
+.pricetable .pricetable-inner{
+	vertical-align: baseline;
+	display: inline-block;
+	font-size:0px;
+	text-align: center;
+	white-space: nowrap;
+}
+.pricetable .pricetable-column {
+	display: inline-block;
+	text-align: center;
+	transition: width 1s;
+	-moz-transition: width 1s; /* Firefox 4 */
+	-webkit-transition: width 1s; /* Safari and Chrome */
+	-o-transition: width 1s;
+	position: relative;
+	/*min-width: 150px;*/
+	font-size: 12px;
+	margin: 0px;
+}
+.pricetable .pricetable-column .pricetable-feature-lbl{
+	color: #000;
+	background: rgba(0, 0, 0, 0.1);
+	display: none;
+	font-weight: bold;
+	float: left;
+	clear: left;
+	width:50%;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	text-align: center;
+}
+.pricetable .pricetable-column .new-ribbon{
+	height: 112px;
+	width: 112px;
+	background-image: url(../images/new-ribbon.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: absolute;
+	left: -2px;
+	top: -2px;
+}
+.ribbon {
+	display:none;
+/*	display: block;
+	width: 30px;
+	position: absolute;
+	color: #fff;
+	padding: 20px 0 10px;
+	text-align: center;
+	font-family: arial, sans-serif;
+	font-weight: bold;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+	z-index: 999;
+	background-color: #090;
+	top: 35px;*/
+}
+
+/*.ribbon:before {
+  display: block;
+  width: 30px;
+  height: 0;
+  position: absolute;
+  top: 4px;
+  content: "";
+  border-top: 1px dotted rgba(0, 0, 0, 0.2);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+
+.ribbon:after {
+  display: block;
+  width: 0;
+  height: 0;
+  content: "";
+  position: relative;
+  bottom: -25px;
+  z-index: 100;
+  border-width: 0 15px 15px 15px;
+  border-style: solid;
+  border-color: #090 #090 transparent #090;
+}*/
+
+@media (min-width:100px) {
+ .pricetable .pricetable-column {
+/*width: 100%;*/
+}
+}
+@media (max-width:400px) {
+}
+
+@media (min-width:900px) {
+ .pricetable .pricetable-column {
+/*width: 20%;*/
+}
+}
+.pricetable .pricetable-header {
+	overflow: hidden;	/*border: 1px solid #000;*/
+}
+
+.pricetable .pricetable-header .pricetable-fld-price {
+	margin: 0px !important;
+	padding: 0px;
+	display: block;
+	font-family: JandaManateeSolid, Gadget, sans-serif;
+	/*font-size: 64px;*/
+	font-weight: normal;
+	text-decoration: none;
+	font-style: normal;
+	vertical-align: top;
+	line-height: normal !important;
+	color: #FFF;        
+
+        
+}
+.pricetable .pricetable-header .pricetable-fld-price .cur {
+/*	font-size: 36px;
+	vertical-align: top;
+	line-height: 50px;*/
+}
+.pricetable .pricetable-header .pricetable-fld-price .dec {
+	font-size: 36px;
+	vertical-align: top;
+	/*line-height: 50px;*/
+}
+.pricetable .pricetable-header p {
+	display: block;
+	white-space: normal;
+	
+	/*	padding-bottom: 5px;
+	margin: 0px !important;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	font-weight: bold;
+	font-size: 12px;*/
+}
+/*.pricetable ul{
+	margin: 0px !important;
+	padding: 0px !important;
+	margin-bottom: 0px !important;
+	line-height: normal !important;
+}*/
+.pricetable ul.features {
+	display: block;
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0px !important;
+	padding: 0px !important;
+	margin-bottom: 0px !important;
+	line-height: normal !important;
+
+}
+.pricetable ul.features li br{ display:none !important;}
+
+/*.pricetable .pricetable-column:nth-child(odd) ul.features li:nth-child(even) {background: rgba(255, 255, 255, 0.1);}*/
+/*.pricetable .pricetable-column:nth-child(even) ul.features li:nth-child(even) {background: rgba(0, 0, 0, 0.1);}*/
+.pricetable .pricetable-button-container {
+	display: block;
+	font-weight: bold;
+
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+}
+/*.pricetable .pricetable-button-container a {
+	-moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+	box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b) );
+	background:-moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100% );
+ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
+	background-color:#9dce2c;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #83c41a;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #689324;
+}
+.pricetable .pricetable-button-container a:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
+	background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
+ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
+	background-color:#8cb82b;
+}
+.pricetable .pricetable-button-container a:active {
+	position:relative;
+	top:1px;
+}*/
+.pricetable .labeling .pricetable-column-wall{
+	background-color: transparent !important;
+	position: relative;
+}
+.pricetable .labeling:hover .pricetable-column-wall{
+	background-color: transparent !important;
+}
+.pricetable .labeling .pricetable-header{
+	visibility: hidden;
+}
+.pricetable .labeling .pricetable-button-container{
+	visibility: hidden;
+}
+.pricetable .labeling .features{}
+.pricetable .labeling .features li{ background: transparent;}
+
+.pricetable-clear{
+	clear: both;
+}
+.pricetable .features li small{
+	
+	display:block;
+	text-decoration:none;
+	position: absolute;
+	padding: 5px;
+	left: -10px;
+	right: -10px;
+	display: block;
+	white-space: normal;
+	/*-moz-transform: scale(0) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(0) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(0) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(0) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(0) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);*/
+	z-index:999999;
+		
+	-webkit-transition: all .2s ease-out;
+     -moz-transition: all .2s ease-out;
+      -ms-transition: all .2s ease-out;
+       -o-transition: all .2s ease-out;
+          transition: all .2s ease-out;
+	bottom: 0px;
+	opacity:0;
+}
+.pricetable .features li small:after{
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  /*border-top: solid #83c41a 10px;*/
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -13px;
+  position: absolute;
+  width: 0;
+}
+.pricetable .features li:hover small{
+	/*-moz-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-webkit-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-o-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	-ms-transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);
+	transform: scale(1) rotate(0deg) translate(0px, 0px) skew(0deg, 0deg);*/
+	bottom: 35px;
+	opacity:1;
+	}
+.pricetable .features li span{
+	display:none;
+	position: relative;
+	padding-bottom: 5px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+
+
+}
+	
+.pricetable .features li span:after{
+  border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  bottom: -5px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+  width: 0;
+}
+.hasToolTip:after{
+	padding:0px;
+	border-left: solid transparent 10px;
+	border-right: solid transparent 0px;
+	border-top: solid #ff0000 10px;
+	/* bottom: -10px;*/
+	border-left: solid transparent 10px;
+  content: "";
+	height: 0;
+	/*left: 50%;*/
+  right:0px;
+	top:0px;
+	/*margin-left: -10px;*/
+	position: absolute;
+	width: 0;
+}
+
+.ribbon-wrapper-green {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}
+
+.ribbon-green {
+	letter-spacing:1px;
+	color: #333;
+	text-align: center;
+	text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform:    rotate(45deg);
+	-ms-transform:     rotate(45deg);
+	-o-transform:      rotate(45deg);
+	position: relative;
+	left: -7px;
+	top: 22px;
+	width: 118px;
+	background-color: #BFDC7A;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+	background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+	background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
+	color: #6a6340;
+	-webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+	-moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+	box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+	font-family: Sans-Serif;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding-top: 5px;
+	padding-right: 0;
+	padding-bottom: 5px;
+	padding-left: 0;
+}
+
+.ribbon-green:before, .ribbon-green:after {
+  content: "";
+  border-top:   3px solid #6e8900;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-green:before {
+  left: 0;
+}
+.ribbon-green:after {
+  right: 0;
+}​

@@ -1,0 +1,19 @@
+/*
+ Theme Name:     ustom Wordpress Child Theme
+ Theme URI:      http://revowp.com
+ Description:    *This Theme (And Components Within) May NOT Be Resold.
+ Author:         8theme
+ Author URI:     http://themeforest.net/user/8theme
+ Template:       revowp
+ Version:        1.1.6
+*/
+
+
+@import url("../revowp/style.css");
+ 
+/* =Theme customization starts here
+------------------------------------------------------- */
+
+.tp-bullets {
+	display: none;
+}

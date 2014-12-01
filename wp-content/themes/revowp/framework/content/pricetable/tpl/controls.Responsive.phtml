@@ -1,0 +1,66 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<div class="pt-settings-stage">
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_isResponsive" name="chk_isResponsive" value="true"  />
+      Enable Responsive </label>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_responsiveLabel" name="chk_responsiveLabel" value="true"  />
+      Hide Labels </label>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_responsiveLabelSp" name="chk_responsiveLabelSp" value="true"  />
+      Show Separators </label>
+  </div>
+  <div class="ctl">
+    <label>Separator Color: </label>
+    <input type="text" name="pt_responsiveLabelSpColor" id="pt_responsiveLabelSpColor" class="pt_cp" sid='responsiveLabelSpColor' value="" />
+  </div>
+</div>
+<script language="JavaScript" type="text/javascript">
+function setMyPriceTableResponsive(){
+	jQuery("#ptStyles").val(JSON.stringify(ptStyles));
+	jQuery("#chk_isResponsive").prop('checked',ptStyles.isResponsive);
+	jQuery("#chk_responsiveLabel").prop('checked',ptStyles.responsiveLabel);
+	jQuery("#chk_responsiveLabelSp").prop('checked',ptStyles.responsiveLabelSp);
+	/*jQuery('#select_lbTextAlign').val(ptStyles.lbTextAlign);
+	jQuery("#lbl_lbVSpacing").text(ptStyles.lbVSpacing);
+	jQuery("#lbl_lbHSpacing").text(ptStyles.lbHSpacing);
+	jQuery("#lbl_lbLineHeight").text(ptStyles.lbLineHeight);
+	jQuery("#chk_lbZebra").prop('checked',ptStyles.lbZebra);
+	jQuery("#chk_lbZebraLight").prop('checked',ptStyles.lbZebraLight);*/
+
+
+	
+}
+jQuery(document).ready(function(jQuery){
+
+	jQuery("#chk_isResponsive").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.isResponsive = true;
+			}else{ ptStyles.isResponsive = false; }
+			setMyPriceTableResponsive();
+		});
+	jQuery("#chk_responsiveLabel").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.responsiveLabel = true;
+			}else{ ptStyles.responsiveLabel = false; }
+			setMyPriceTableResponsive();
+		});
+	jQuery("#chk_responsiveLabelSp").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.responsiveLabelSp = true;
+			}else{ ptStyles.responsiveLabelSp = false; }
+			setMyPriceTableResponsive();
+		});
+		setMyPriceTableResponsive();
+		
+});
+</script>

@@ -1,0 +1,510 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<style>
+#<?php echo $attr['ctl'];
+?>price-my-button{
+	width:150px;	
+	 position:relative;
+	 font-weight:normal;
+}
+#<?php echo $attr['ctl'];
+?>price-my-button:after{
+		content:"";
+	 border-left: solid transparent 10px;
+  border-right: solid transparent 10px;
+  border-top: solid #000000 5px;
+  bottom: -10px;
+  content: " ";
+  height: 0;
+  left: 50%;
+  margin-left: -10px;
+  position: absolute;
+  width: 0;
+}
+</style>
+<style id="<?php echo $attr['ctl']; ?>Style">
+#<?php echo $attr['ctl'];
+?>price-my-button {
+ -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+ -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+ box-shadow:inset 0px 1px 0px 0px #ffffff;
+ background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+ background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+ background-color:#ededed;
+ -moz-border-radius:6px;
+ -webkit-border-radius:6px;
+ border-radius:6px;
+ border:1px solid #dcdcdc;
+ display:inline-block;
+ color:#777777;
+ font-family:arial;
+ font-size:15px;
+ font-weight:bold;
+ padding:6px 24px;
+ text-decoration:none;
+ text-shadow:1px 1px 0px #ffffff;
+}
+
+</style>
+<input type="hidden" id="btnCode<?php echo $attr['ctl']; ?>" name="btnCode<?php echo $attr['ctl']; ?>" />
+<div class="gIconToolBar">
+<div class="gFillColor">
+<ul class="colorThemePalete" id="<?php echo $attr['ctl']; ?>colorThemes">
+  <li id="palette0" class="selected"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(237, 237, 237); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(223, 223, 223); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(119, 119, 119); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(220, 220, 220); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(255, 255, 255); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(255, 255, 255); "></span></li>
+  <li id="palette1"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(254, 26, 0); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(206, 1, 0); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(216, 53, 38); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(242, 156, 147); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(178, 62, 53); "></span></li>
+  <li id="palette2"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(119, 212, 42); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(92, 184, 17); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(48, 97, 8); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(38, 138, 22); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(202, 239, 171); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(170, 222, 124); "></span></li>
+  <li id="palette3"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(121, 187, 255); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(55, 141, 229); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(132, 187, 243); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(187, 218, 247); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(82, 142, 204); "></span></li>
+  <li id="palette4"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(255, 196, 119); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(251, 158, 37); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(238, 180, 79); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(252, 226, 193); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(204, 159, 82); "></span></li>
+  <li id="palette5"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(193, 35, 222); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(162, 13, 189); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(165, 17, 192); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(225, 132, 243); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(155, 20, 179); "></span></li>
+  <li id="palette6"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(197, 121, 255); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(163, 65, 238); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(169, 70, 245); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(230, 202, 252); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(134, 40, 206); "></span></li>
+  <li id="palette7"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(240, 201, 17); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(242, 171, 30); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(201, 34, 0); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(230, 95, 68); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(249, 236, 160); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(222, 209, 124); "></span></li>
+  <li id="palette8"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(157, 206, 44); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(140, 184, 43); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(131, 196, 26); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(193, 237, 156); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(104, 147, 36); "></span></li>
+  <li id="palette9"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(242, 69, 55); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(198, 45, 31); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(208, 39, 24); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(245, 151, 142); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(129, 14, 5); "></span></li>
+  <li id="palette10"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(250, 228, 189); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(234, 195, 128); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(238, 180, 79); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(252, 248, 242); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(204, 159, 82); "></span></li>
+  <li id="palette11"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(255, 91, 176); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(239, 2, 125); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(238, 30, 181); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(251, 175, 227); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(199, 0, 103); "></span></li>
+  <li id="palette12"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(121, 187, 255); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(65, 151, 238); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(70, 157, 245); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(202, 227, 252); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(40, 122, 206); "></span></li>
+  <li id="palette13"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(249, 249, 249); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(233, 233, 233); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(102, 102, 102); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(220, 220, 220); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(255, 255, 255); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(255, 255, 255); "></span></li>
+  <li id="palette14"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(246, 179, 61); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(210, 145, 5); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(237, 169, 51); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(254, 216, 151); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(205, 138, 21); "></span></li>
+  <li id="palette15"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(184, 227, 86); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(165, 204, 82); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(131, 196, 26); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(217, 251, 190); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(134, 174, 71); "></span></li>
+  <li id="palette16"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(61, 148, 246); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(30, 98, 208); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(51, 127, 237); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(151, 196, 254); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(21, 112, 205); "></span></li>
+  <li id="palette17"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(165, 61, 246); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(124, 22, 203); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(156, 51, 237); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(209, 151, 254); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(125, 21, 205); "></span></li>
+  <li id="palette18"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(255, 206, 121); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(238, 175, 65); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(238, 180, 79); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(252, 234, 202); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(206, 142, 40); "></span></li>
+  <li id="palette19"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(238, 161, 252); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(212, 65, 238); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(221, 93, 244); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(244, 202, 252); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(182, 61, 204); "></span></li>
+  <li id="palette20"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(99, 184, 238); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(70, 140, 207); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(20, 57, 106); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(56, 102, 163); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(190, 226, 249); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(124, 172, 222); "></span></li>
+  <li id="palette21"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(255, 236, 100); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(255, 171, 35); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(51, 51, 51); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(255, 170, 34); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(255, 246, 175); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(255, 238, 102); "></span></li>
+  <li id="palette22"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(250, 102, 90); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(211, 70, 57); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(216, 53, 38); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(250, 179, 173); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(152, 35, 26); "></span></li>
+  <li id="palette23"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(241, 189, 250); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(218, 128, 234); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(226, 132, 243); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(246, 220, 251); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(185, 82, 204); "></span></li>
+  <li id="palette24"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(252, 141, 131); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(228, 104, 93); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(216, 53, 38); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(247, 197, 192); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(178, 62, 53); "></span></li>
+  <li id="palette25"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(255, 255, 255); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(246, 246, 246); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(102, 102, 102); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(220, 220, 220); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(255, 255, 255); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(255, 255, 255); "></span></li>
+  <li id="palette26"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(137, 196, 3); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(119, 168, 9); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(116, 184, 7); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(164, 226, 113); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(82, 128, 9); "></span></li>
+  <li id="palette27"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(189, 219, 250); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(128, 181, 234); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(132, 187, 243); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(220, 236, 251); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(82, 142, 204); "></span></li>
+  <li id="palette28"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(223, 189, 250); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(188, 128, 234); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(197, 132, 243); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(239, 220, 251); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(151, 82, 204); "></span></li>
+  <li id="palette29"><span class="bgTopColor" title="BG Gradient Color1" style="background-color: rgb(218, 61, 246); "></span><span class="bgBottomColor" title="BG Gradient Color2" style="background-color: rgb(181, 30, 208); "></span><span class="fontColor" title="Font Color" style="background-color: rgb(255, 255, 255); "></span><span class="borderColor" title="Border Color" style="background-color: rgb(209, 51, 237); "></span><span class="boxShadowColor" title="Box Shadow Color" style="background-color: rgb(238, 151, 254); "></span><span class="textShadowColor" title="Text Shadow Color" style="background-color: rgb(177, 21, 205); "></span></li>
+</ul>
+</div></div>
+<table class="pricebutton-preview">
+  <tr>
+    <td><div class="toolTipz" id="<?php echo $attr['ctl']; ?>price-my-button">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue interdum urna, et bibendum lacus lacinia ut. </div></td>
+  </tr>
+</table>
+
+<table width="100%" cellpadding="5" cellspacing="0" class="pricebutton-ctls">
+  <tr>
+    <td><div>Top BG Color</div>
+      <input type="text" class="btn_cp<?php echo $attr['ctl']; ?>" name="btn_bgTopColor" id="<?php echo $attr['ctl']; ?>btn_bgTopColor" value="" Sid="bgTopColor" /></td>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_vertical_size">Vertical Size: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_vertical_size"></div></td>
+  </tr>
+  <tr>
+    <td><div>Bottom BG Color</div>
+      <input type="text" class="btn_cp<?php echo $attr['ctl']; ?>" name="btn_bgBottomColor" id="<?php echo $attr['ctl']; ?>btn_bgBottomColor" value="" Sid="bgBottomColor" /></td>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_horizontal_size">Horizontal Size: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_horizontal_size"></div></td>
+  </tr>
+  <tr>
+    <td><div>Font Color</div>
+      <input type="text" class="btn_cp<?php echo $attr['ctl']; ?>" name="btn_fontColor" id="<?php echo $attr['ctl']; ?>btn_fontColor" value="" Sid="fontColor" /></td>
+    <td width="50%"><div id="<?php echo $attr['ctl']; ?>lbl_font_size">Font Size: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_font_size"></div></td>
+  </tr>
+  <tr>
+    <td><div>Border Color</div>
+      <input type="text" class="btn_cp<?php echo $attr['ctl']; ?>" name="btn_borderColor" id="<?php echo $attr['ctl']; ?>btn_borderColor" value="" Sid="borderColor" /></td>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_border_size">Border Size: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_border_size"></div></td>
+  </tr>
+  <tr>
+    <td><div>Shadow Color</div>
+      <input type="text" class="btn_cp<?php echo $attr['ctl']; ?>" name="btn_boxShadowColor" id="<?php echo $attr['ctl']; ?>btn_boxShadowColor" value="" Sid="boxShadowColor" /></td>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_border_radius">Border Radius: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_border_radius"></div></td>
+  </tr>
+  <tr>
+    <td><div>Text Shadow Color</div>
+      <input type="text" class="btn_cp<?php echo $attr['ctl']; ?>" name="btn_textShadowColor" id="<?php echo $attr['ctl']; ?>btn_textShadowColor" value="" Sid="textShadowColor" /></td>
+      <td><div>Indicator Color</div>
+      <input type="text" class="btn_cp<?php echo $attr['ctl']; ?>" name="btn_indicatorColor" id="<?php echo $attr['ctl']; ?>btn_indicatorColor" value="" Sid="indicatorColor" /></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div id="<?php echo $attr['ctl']; ?>lbl_shadow_box">
+        <input type="checkbox" id="<?php echo $attr['ctl']; ?>chk_btn_box_shadow" />
+        Box Shadow /
+        <input type="checkbox" id="<?php echo $attr['ctl']; ?>chk_btn_box_shadow_inset" />
+        Inset</div></td>
+  </tr>
+  <tr>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_box_vertical_position">V Position: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_box_vertical_position"></div></td>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_box_horizontal_position">H Position: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_box_horizontal_position"></div></td>
+  </tr>
+  <tr>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_box_blur_radius">Blur Radius: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_box_blur_radius"></div></td>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_box_spread_radius">Spread Radius: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_box_spread_radius"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2"><div id="<?php echo $attr['ctl']; ?>lbl_text_shadow">
+        <input type="checkbox" id="<?php echo $attr['ctl']; ?>chk_btn_text_shadow" />
+        Text Shadow</div></td>
+  </tr>
+  <tr>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_txt_shadow_v_position">V Position: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_txt_shadow_v_position"></div></td>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_txt_shadow_h_position">H Position: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_txt_shadow_h_position"></div></td>
+  </tr>
+  <tr>
+    <td><div id="<?php echo $attr['ctl']; ?>lbl_txt_shadow_blur_radius">Blur Radius: <span></span></div>
+      <div id="<?php echo $attr['ctl']; ?>slider_txt_shadow_blur_radius"></div></td>
+    <td></td>
+  </tr>
+</table>
+<script>
+	var defaultStyles<?php echo $attr['ctl']; ?> = { // Includes variables for CSS properties
+			bgTopColor : '#ededed',
+			bgBottomColor : '#dfdfdf',
+			fontColor : '#777777',
+			borderColor : '#dcdcdc',
+			boxShadowColor : '#ffffff',
+			textShadowColor : '#ffffff',
+			borderRadius : '6',
+			borderSize : '1',
+			boxShadow: true,
+			boxShadowBlurRadius : '0',
+			boxShadowInset : 'inset',
+			boxShadowOffsetX : '0',
+			boxShadowOffsetY : '1',
+			boxShadowSpreadRadius : '0',
+			customClass : 'classname',
+			fontFamily : 'arial',
+			fontSize : '15',
+			fontWeight : 'bold',
+			paddingX : '6',
+			paddingY : '24',
+			textShadow: true,
+			textShadowBlurRadius : '0',
+			textShadowOffsetX : '1',
+			textShadowOffsetY : '1',
+		}; 
+	
+	var styles<?php echo $attr['ctl']; ?> =  <?php $stl = get_post_meta($post->ID,'pt'.$attr['ctl'],true); 
+	if(empty($stl)) $stl = $attr['defaultCode'];
+	echo $stl;
+	?>;
+	<?php if($attr['asso']): ?>
+	styles<?php echo $attr['ctl']; ?>.fontSize = styles<?php echo $attr['asso']; ?>.fontSize;
+	styles<?php echo $attr['ctl']; ?>.paddingX = styles<?php echo $attr['asso']; ?>.paddingX;
+	styles<?php echo $attr['ctl']; ?>.paddingY = styles<?php echo $attr['asso']; ?>.paddingY;
+	styles<?php echo $attr['ctl']; ?>.borderSize = styles<?php echo $attr['asso']; ?>.borderSize;
+	<?php endif; ?>
+		//alert(JSON.stringify(styles<?php echo $attr['ctl']; ?>));
+		function setMyButton<?php echo $attr['ctl']; ?>(){ 
+		jQuery('#btnCode<?php echo $attr['ctl']; ?>').val(JSON.stringify(styles<?php echo $attr['ctl']; ?>));
+		//jQuery('style').empty();	
+		//var stl<?php echo $attr['ctl']; ?> = jQuery('style[title=mybutton<?php echo $attr['ctl']; ?>]');
+		var stl<?php echo $attr['ctl']; ?> = jQuery('#<?php echo $attr['ctl']; ?>Style');
+
+		
+		stl<?php echo $attr['ctl']; ?>.empty();
+		
+		var new_style<?php echo $attr['ctl']; ?> =  "#<?php echo $attr['ctl']; ?>price-my-button {";
+		if(styles<?php echo $attr['ctl']; ?>.boxShadow){
+	new_style<?php echo $attr['ctl']; ?> += "-moz-box-shadow:"+styles<?php echo $attr['ctl']; ?>.boxShadowInset+" "+styles<?php echo $attr['ctl']; ?>.boxShadowOffsetY+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowOffsetX+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowBlurRadius+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowSpreadRadius+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowColor+";";
+	new_style<?php echo $attr['ctl']; ?> += "-webkit-box-shadow:"+styles<?php echo $attr['ctl']; ?>.boxShadowInset+" "+styles<?php echo $attr['ctl']; ?>.boxShadowOffsetY+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowOffsetX+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowBlurRadius+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowSpreadRadius+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowColor+";";
+	new_style<?php echo $attr['ctl']; ?> += "box-shadow:"+styles<?php echo $attr['ctl']; ?>.boxShadowInset+" "+styles<?php echo $attr['ctl']; ?>.boxShadowOffsetY+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowOffsetX+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowBlurRadius+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowSpreadRadius+"px "+styles<?php echo $attr['ctl']; ?>.boxShadowColor+";";
+		}
+	new_style<?php echo $attr['ctl']; ?> += "background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, "+styles<?php echo $attr['ctl']; ?>.bgTopColor+"), color-stop(1, "+styles<?php echo $attr['ctl']; ?>.bgBottomColor+") );";
+	new_style<?php echo $attr['ctl']; ?> += "background:-moz-linear-gradient( center top, "+styles<?php echo $attr['ctl']; ?>.bgTopColor+" 5%, "+styles<?php echo $attr['ctl']; ?>.bgBottomColor+" 100% );";
+	new_style<?php echo $attr['ctl']; ?> += "filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='"+styles<?php echo $attr['ctl']; ?>.bgTopColor+"', endColorstr='"+styles<?php echo $attr['ctl']; ?>.bgBottomColor+"');";
+	new_style<?php echo $attr['ctl']; ?> += "background-color:"+styles<?php echo $attr['ctl']; ?>.bgTopColor+";";
+	new_style<?php echo $attr['ctl']; ?> += "-moz-border-radius:"+styles<?php echo $attr['ctl']; ?>.borderRadius+"px;";
+	new_style<?php echo $attr['ctl']; ?> += "-webkit-border-radius:"+styles<?php echo $attr['ctl']; ?>.borderRadius+"px;";
+	new_style<?php echo $attr['ctl']; ?> += "border-radius:"+styles<?php echo $attr['ctl']; ?>.borderRadius+"px;";
+	new_style<?php echo $attr['ctl']; ?> += "border:"+styles<?php echo $attr['ctl']; ?>.borderSize+"px solid "+styles<?php echo $attr['ctl']; ?>.borderColor+";";
+	new_style<?php echo $attr['ctl']; ?> += "display:inline-block;";
+	new_style<?php echo $attr['ctl']; ?> += "color:"+styles<?php echo $attr['ctl']; ?>.fontColor+";";
+	new_style<?php echo $attr['ctl']; ?> += "font-family:arial;";
+	new_style<?php echo $attr['ctl']; ?> += "font-size:"+styles<?php echo $attr['ctl']; ?>.fontSize+"px;";
+	//new_style<?php echo $attr['ctl']; ?> += "font-weight:bold;";
+	new_style<?php echo $attr['ctl']; ?> += "padding:"+styles<?php echo $attr['ctl']; ?>.paddingX+"px "+styles<?php echo $attr['ctl']; ?>.paddingY+"px;";
+	new_style<?php echo $attr['ctl']; ?> += "text-decoration:none;";
+	if(styles<?php echo $attr['ctl']; ?>.textShadow){
+	new_style<?php echo $attr['ctl']; ?> += "text-shadow:"+styles<?php echo $attr['ctl']; ?>.textShadowOffsetX+"px "+styles<?php echo $attr['ctl']; ?>.textShadowOffsetY+"px "+styles<?php echo $attr['ctl']; ?>.textShadowBlurRadius+"px "+styles<?php echo $attr['ctl']; ?>.textShadowColor+";";
+	new_style<?php echo $attr['ctl']; ?> += "}";
+		}
+	new_style<?php echo $attr['ctl']; ?> += "#<?php echo $attr['ctl']; ?>price-my-button:after {";
+	new_style<?php echo $attr['ctl']; ?> += "border-top: solid "+styles<?php echo $attr['ctl']; ?>.bgBottomColor+" 10px;";
+	new_style<?php echo $attr['ctl']; ?> += "}";
+			//alert(new_style<?php echo $attr['ctl']; ?>);
+			stl<?php echo $attr['ctl']; ?>.html(new_style<?php echo $attr['ctl']; ?>);
+			//stl<?php echo $attr['ctl']; ?>.html(new_style<?php echo $attr['ctl']; ?>);
+		}
+	function setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>(){ 
+	
+	jQuery( "#<?php echo $attr['ctl']; ?>lbl_font_size span" ).text( styles<?php echo $attr['ctl']; ?>.fontSize +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_border_radius span" ).text( styles<?php echo $attr['ctl']; ?>.borderRadius +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_border_size span" ).text( styles<?php echo $attr['ctl']; ?>.borderSize +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_vertical_size span" ).text( styles<?php echo $attr['ctl']; ?>.paddingX +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_horizontal_size span" ).text( styles<?php echo $attr['ctl']; ?>.paddingY +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_box_vertical_position span" ).text( styles<?php echo $attr['ctl']; ?>.boxShadowOffsetX +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_box_horizontal_position span" ).text( styles<?php echo $attr['ctl']; ?>.boxShadowOffsetY +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_box_blur_radius span" ).text( styles<?php echo $attr['ctl']; ?>.boxShadowBlurRadius +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_box_spread_radius span" ).text( styles<?php echo $attr['ctl']; ?>.boxShadowSpreadRadius +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_txt_shadow_v_position span" ).text( styles<?php echo $attr['ctl']; ?>.textShadowOffsetY +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_txt_shadow_h_position span" ).text( styles<?php echo $attr['ctl']; ?>.textShadowOffsetX +"px");
+				jQuery( "#<?php echo $attr['ctl']; ?>lbl_txt_shadow_blur_radius span" ).text( styles<?php echo $attr['ctl']; ?>.textShadowBlurRadius +"px");
+				
+				jQuery( "#<?php echo $attr['ctl']; ?>btn_bgTopColor").miniColors('value', styles<?php echo $attr['ctl']; ?>.bgTopColor.toUpperCase());
+				jQuery( "#<?php echo $attr['ctl']; ?>btn_bgBottomColor").miniColors('value', styles<?php echo $attr['ctl']; ?>.bgBottomColor.toUpperCase());
+				jQuery( "#<?php echo $attr['ctl']; ?>btn_borderColor").miniColors('value', styles<?php echo $attr['ctl']; ?>.borderColor.toUpperCase());
+				jQuery( "#<?php echo $attr['ctl']; ?>btn_fontColor").miniColors('value', styles<?php echo $attr['ctl']; ?>.fontColor.toUpperCase());
+				jQuery( "#<?php echo $attr['ctl']; ?>btn_boxShadowColor").miniColors('value', styles<?php echo $attr['ctl']; ?>.boxShadowColor.toUpperCase());
+				jQuery( "#<?php echo $attr['ctl']; ?>btn_textShadowColor").miniColors('value', styles<?php echo $attr['ctl']; ?>.textShadowColor.toUpperCase());
+				jQuery( "#<?php echo $attr['ctl']; ?>btn_indicatorColor").miniColors('value', styles<?php echo $attr['ctl']; ?>.indicatorColor.toUpperCase());
+				
+				if(styles<?php echo $attr['ctl']; ?>.boxShadow){ jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_box_shadow").prop('checked', true); }else{ jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_box_shadow").prop('checked', false); }
+				
+				if(styles<?php echo $attr['ctl']; ?>.boxShadowInset=='inset'){ jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_box_shadow_inset").prop('checked', true); }else{ jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_box_shadow_inset").prop('checked', false); }
+				
+				if(styles<?php echo $attr['ctl']; ?>.textShadow){ jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_text_shadow").prop('checked', true); }else{ jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_text_shadow").prop('checked', false); }
+				
+				
+	}
+	function <?php echo $attr['ctl']; ?>colorToHex(color) {
+    if (color.substr(0, 1) === '#') {
+        return color;
+    }
+    var digits = /(.*?)rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+    
+    var red = parseInt(digits[2]);
+    var green = parseInt(digits[3]);
+    var blue = parseInt(digits[4]);
+    
+    var rgb = blue | (green << 8) | (red << 16);
+    return digits[1] + '#' + rgb.toString(16);
+}
+	jQuery(function() {
+	
+		//alert(styles<?php echo $attr['ctl']; ?>.borderRadius);
+		jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_text_shadow").click(function(){
+			if(jQuery(this).prop('checked')){
+				styles<?php echo $attr['ctl']; ?>.textShadow = true;
+			}else{ styles<?php echo $attr['ctl']; ?>.textShadow = false; }
+			setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+		});
+		
+		jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_box_shadow").click(function(){
+			//alert(jQuery(this).prop('checked'));
+			if(jQuery(this).prop('checked')==true){
+				styles<?php echo $attr['ctl']; ?>.boxShadow = true;
+			}else{ styles<?php echo $attr['ctl']; ?>.boxShadow = false; }
+			setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+		});
+		
+		jQuery( "#<?php echo $attr['ctl']; ?>chk_btn_box_shadow_inset").click(function(){
+			if(jQuery(this).prop('checked')){
+				styles<?php echo $attr['ctl']; ?>.boxShadowInset = 'inset';
+			}else{ styles<?php echo $attr['ctl']; ?>.boxShadowInset = ''; }
+			setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+		});
+		
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_font_size" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.fontSize,
+			<?php if($attr['mini']): ?>disabled: true,<?php endif; ?>
+			min: 8,
+			max: 28,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.fontSize = ui.value;
+				
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_border_radius" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.borderRadius,
+			min: 0,
+			max: 42,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.borderRadius = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_border_size" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.borderSize,
+			<?php if($attr['mini']): ?>disabled: true,<?php endif; ?>
+			min: 0,
+			max: 12,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.borderSize = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_vertical_size" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.paddingX,
+			<?php if($attr['mini']): ?>disabled: true,<?php endif; ?>
+			min: 0,
+			max: 32,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.paddingX = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_horizontal_size" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.paddingY,
+			<?php if($attr['mini']): ?>disabled: true,<?php endif; ?>
+			min: 0,
+			max: 76,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.paddingY = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_box_vertical_position" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.boxShadowOffsetX,
+			min: -50,
+			max: 50,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.boxShadowOffsetX = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_box_horizontal_position" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.boxShadowOffsetY,
+			min: -50,
+			max: 50,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.boxShadowOffsetY = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_box_blur_radius" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.boxShadowBlurRadius,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.boxShadowBlurRadius = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_box_spread_radius" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.boxShadowSpreadRadius,
+			min: -50,
+			max: 50,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.boxShadowSpreadRadius = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_txt_shadow_v_position" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.textShadowOffsetY,
+			min: -50,
+			max: 50,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.textShadowOffsetY = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_txt_shadow_h_position" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.textShadowOffsetX,
+			min: -50,
+			max: 50,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.textShadowOffsetX = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		jQuery( "#<?php echo $attr['ctl']; ?>slider_txt_shadow_blur_radius" ).slider({
+			range: "min",
+			value:styles<?php echo $attr['ctl']; ?>.textShadowBlurRadius,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				styles<?php echo $attr['ctl']; ?>.textShadowBlurRadius = ui.value;
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+			}
+		});
+		
+		//jQuery( "#<?php echo $attr['ctl']; ?>amount" ).val( "$" + jQuery( "#<?php echo $attr['ctl']; ?>slider" ).slider( "value" ) );
+		
+		jQuery(".btn_cp<?php echo $attr['ctl']; ?>").miniColors({
+					letterCase: 'uppercase',
+					change: function(hex, rgb) {
+						//logData(hex, rgb);
+						var sid = jQuery(this).attr("SID");
+						styles<?php echo $attr['ctl']; ?>[sid] = hex;
+						jQuery('#btnCode<?php echo $attr['ctl']; ?>').val(JSON.stringify(styles<?php echo $attr['ctl']; ?>));
+						setMyButton<?php echo $attr['ctl']; ?>();
+					}
+				});
+				
+				
+				setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>();
+				setMyButton<?php echo $attr['ctl']; ?>();
+				
+				jQuery( "#<?php echo $attr['ctl']; ?>colorThemes li").click(function(){
+					
+					var tmp = jQuery(this).find('span[class=bgTopColor]').attr('style').replace("background-color:","");
+					tmp = <?php echo $attr['ctl']; ?>colorToHex(tmp);
+					styles<?php echo $attr['ctl']; ?>.bgTopColor = tmp;
+					
+					tmp = jQuery(this).find('span[class=bgBottomColor]').attr('style').replace("background-color:","");
+					tmp = <?php echo $attr['ctl']; ?>colorToHex(tmp);
+					styles<?php echo $attr['ctl']; ?>.bgBottomColor = tmp;
+					
+					tmp = jQuery(this).find('span[class=fontColor]').attr('style').replace("background-color:","");
+					tmp = <?php echo $attr['ctl']; ?>colorToHex(tmp);
+					styles<?php echo $attr['ctl']; ?>.fontColor = tmp;
+					
+					tmp = jQuery(this).find('span[class=borderColor]').attr('style').replace("background-color:","");
+					tmp = <?php echo $attr['ctl']; ?>colorToHex(tmp);
+					styles<?php echo $attr['ctl']; ?>.borderColor = tmp;
+					
+					tmp = jQuery(this).find('span[class=boxShadowColor]').attr('style').replace("background-color:","");
+					tmp = <?php echo $attr['ctl']; ?>colorToHex(tmp);
+					styles<?php echo $attr['ctl']; ?>.boxShadowColor = tmp;
+					
+					tmp = jQuery(this).find('span[class=textShadowColor]').attr('style').replace("background-color:","");
+					tmp = <?php echo $attr['ctl']; ?>colorToHex(tmp);
+					styles<?php echo $attr['ctl']; ?>.textShadowColor = tmp;
+					
+					setMyButton<?php echo $attr['ctl']; ?>Vals<?php echo $attr['ctl']; ?>()
+					//alert(z);
+					
+				});
+				
+	});
+	jQuery( "#<?php echo $attr['ctl']; ?>price-my-button").click(function(){
+		
+	});
+	</script> 

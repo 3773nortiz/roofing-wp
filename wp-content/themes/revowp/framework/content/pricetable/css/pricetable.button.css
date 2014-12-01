@@ -1,0 +1,13 @@
+.pricebutton-preview{
+	height: 150px;
+	text-align: center;
+	width: 100%;
+}
+.pricebutton-ctls{}
+.pricebutton-ctls div{
+	font-size: 9px;
+	font-weight: bold;
+}
+.pricebutton-ctls input[type=text]{
+	width: 70px;
+}

@@ -1,0 +1,261 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<?php $gfonts = get_post_meta($post->ID,'ptGfonts',true); ?>
+<style>
+<?php foreach($gfonts as $k=>$gfont): ?>
+@import url(<?php echo $gfont['url'] ?>);
+<?php endforeach; ?>
+</style>
+<script language="JavaScript" type="text/javascript">
+var ptStyles = { 
+bgTransparent: true,
+bgColor: '#abCdeF',
+bgPaddingV: '0',
+bgPaddingH: '0',
+font: 'Arial',
+fontSize: '12',
+borderRadius: '0',
+columnBGColor: '#EEEEEE',
+columnBGColorHover: '#666666',
+columnRoundedCorner: true,
+columnRoundedCornerRadius: '10',
+columnRoundedCornerStyle: 'set',
+columnHeaderBGColor: '#FF0000',
+columnHeaderTitleBGColor: '#333333',
+columnHeaderTitleFontSize: '12',
+columnHeaderTitleFont: 'Arial',
+columnHeaderTitleFontBold: false,
+columnHeaderTitleVerticalSize: '3',
+columnHeaderPDVerticalSize: '3',
+columnHeaderPDCurFontSize: '12',
+columnHeaderPDPriceFontSize: '12',
+columnHeaderPDPriceColor: '#FFFFFF',
+columnHeaderPDPriceFont: 'Courier New',
+columnHeaderPDPriceFontBold: false,
+};
+
+<?php $ptStyles = get_post_meta($post->ID,'price_table_styles',true); if(empty($ptStyles)): 
+$ptStyles='{"bgTransparent":false,"bgColor":"#abCdeF","bgPaddingV":0,"bgPaddingH":0,"font":"Arial","fontSize":"12","borderRadius":"0","columnBGColor":"#ffffff","columnBGColorHover":"#ffffff","columnRoundedCorner":true,"columnRoundedCornerRadius":20,"columnRoundedCornerStyle":"all","columnHeaderBGColor":"#000000","columnHeaderTitleBGColor":"#4f4f4f","columnHeaderTitleFontSize":28,"columnHeaderTitleFont":"Arial","columnHeaderTitleFontBold":false,"columnHeaderTitleVerticalSize":6,"columnHeaderPDVerticalSize":5,"columnHeaderPDCurFontSize":"12","columnHeaderPDPriceFontSize":"12","columnHeaderPDPriceColor":"#ff0000","columnHeaderPDPriceFont":"Courier New","columnHeaderPDPriceFontBold":true,"columnTitleFontColor":"#ffffff","columnTitleShadowColor":"#ffffff","columnTitleBlurRadius":24,"columnTitleLengthV":0,"columnTitleLengthH":0,"columnTitleFontShadow":false,"columnTitleFontBold":true,"columnTitleFontSize":12,"columnTitleFont":"Verdana","bgcolor":"#ffffff","columnPriceFontBold":true,"columnPriceFontSize":60,"columnPriceFont":"Trebuchet MS","columnPriceBlurRadius":1,"columnPriceFontColor":"#ffffff","columnPriceShadowColor":"#ffffff","columnPriceSymbolFontColor":"#ffffff","columnPriceSymbolShadowColor":"#ffffff","columnPriceSymbolFontBold":true,"columnPriceSymbolBlurRadius":3,"columnPriceSymbolFontSize":30,"columnPriceSymbolLengthV":0,"columnPriceSymbolLengthH":0,"columnPriceSymbolFontShadow":false,"columnPriceSymbolFont":"Comic Sans MS","columnPriceFontShadow":true,"columnPriceLengthV":0,"columnPriceLengthH":0,"columnPDFontColor":"#ffffff","columnPDShadowColor":"#ffffff","columnPDFontBold":false,"columnPDFontSize":10,"columnPDLengthV":0,"columnPDBlurRadius":0,"columnPDLengthH":1,"columnPDFontShadow":true,"columnPDFont":"Arial","columnTitleSeparator":false,"columnHeaderSeparator":false,"featuresSeparatorV":false,"featuresSeparatorH":false,"columnFeaturesFontColor":"#666666","columnFeaturesShadowColor":"#ababab","columnFeaturesLengthV":1,"columnFeaturesBlurRadius":0,"columnFeaturesLengthH":1,"columnFeaturesFontShadow":false,"columnFeaturesFontBold":true,"columnFeaturesFontSize":12,"columnFeaturesFont":"Arial","featuresSeparatorOpacity":20,"hilightedBGColor":"#eeeeee","hilightedBGColorHover":"#eeeeee","hilightedScale":0,"hilightedRoundedCorners":false,"hilightedGlow":false,"hilightedGlowColor":"#000000","hilightedGlowRadius":5,"hilightedTitleShadowColor":"#ffffff","hilightedTitleFontColor":"#ffffff","hilightedTitleBGColor":"#111111","hilightedChangeTitle":true,"hilightedTitleFontShadow":false,"hilightedTitleBlurRadius":2,"hilightedTitleLengthV":0,"hilightedTitleLengthH":0,"hilightedHeaderFontColor":"#ffffff","hilightedHeaderShadowColor":"#ffffff","hilightedHeaderBGColor":"#c62d1f","hilightedChangeHeader":true,"hilightedHeaderFontBold":true,"hilightedTitleFontBold":true,"hilightedHeaderLengthV":0,"hilightedHeaderLengthH":0,"hilightedHeaderFontShadow":true,"hilightedHeaderBlurRadius":1,"hilightedPDShadowColor":"#000000","hilightedPDFontColor":"#ffffff","hilightedChangePD":false,"hilightedPDFontShadow":false,"hilightedPDLengthH":1,"hilightedPDLengthV":1,"hilightedPDBlurRadius":0,"hilightedFeatureFontColor":"#000000","hilightedFeatureShadowColor":"#000000","hilightedFeatureLengthH":1,"hilightedFeatureLengthV":1,"hilightedFeatureBlurRadius":0,"hilightedFeatureFontBold":true,"hilightedChangeFeatures":true,"lbTitleFontColor":"#424242","lbTitleShadowColor":"#d1d1d1","lbTitleFontSize":18,"lbTitleFontBold":true,"lbTitleLengthH":1,"lbTitleLengthV":2,"lbTitleBlurRadius":0,"lbTitleFont":"Trebuchet MS","lbVSpacing":82,"lbHSpacing":10,"lbTitleFontShadow":false,"lbLineHeight":30,"lbZebra":true,"lbZebraLight":false,"lbFeatureFontColor":"#333333","lbFeatureShadowColor":"#000000","lbFeatureBlurRadius":0,"lbFeatureLengthV":0,"lbFeatureLengthH":0,"lbFeatureFontShadow":true,"lbFeatureFontBold":true,"lbFeaturesBGColor":"#ffffff","lbTextAlign":"right","featuresSpacingV":10,"ynIcon":"yes_no_10","ynIconSize":24,"columnOuterSpacing":0,"columnInnerSpacing":0,"isResponsive":true,"responsiveLabel":false,"responsiveLabelSp":true,"responsiveLabelSpColor":"#b5b5b5","featuresBGColor":"#e31616","featuresTransparent":true,"featuresBGColorH":"#ff0000","featuresTransparentBGH":true}';
+endif;
+?>
+ptStyles = <?php echo $ptStyles; ?>;
+</script>
+<input type="hidden" name="ptStyles" id="ptStyles" value='<?php echo get_post_meta($post->ID,'price_table_styles',true); ?>' />
+<div id="ctltabs">
+  <ul>
+    <li><a href="#ctltabs-1">General</a></li>
+    <li><a href="#ctltabs-2">Column</a></li>
+    <li><a href="#ctltabs-3">Header</a></li>
+    <li><a href="#ctltabs-4">Features</a></li>
+    <li><a href="#ctltabs-5">Highlight</a></li>
+    <li><a href="#ctltabs-6">Labeling</a></li>
+    <li><a href="#ctltabs-7">Yes No Icons</a></li>
+    <li><a href="#ctltabs-8">Google Fonts</a></li>
+    <li><a href="#ctltabs-9">Responsive</a></li>
+  </ul>
+  <div id="ctltabs-1"> 
+    <?php include('controls.general.phtml'); ?>
+  </div>
+  <div id="ctltabs-2">
+    <?php include('controls.Column.phtml'); ?>
+  </div>
+  <div id="ctltabs-3"> 
+    <?php include('controls.Header.phtml'); ?>
+  </div>
+  <div id="ctltabs-4"> 
+    <?php include('controls.Features.phtml'); ?>
+  </div>
+  <div id="ctltabs-5"> 
+    <?php include('controls.Highlight.phtml'); ?>
+  </div>
+  <div id="ctltabs-6"> 
+    <?php include('controls.Labeling.phtml'); ?>
+  </div>
+  <div id="ctltabs-7"> 
+    <?php include('controls.yesno.phtml'); ?>
+  </div>
+  <div id="ctltabs-8"> 
+    <?php include('controls.fonts.phtml'); ?>
+  </div>
+  <div id="ctltabs-9"> 
+    <?php include('controls.Responsive.phtml'); ?>
+  </div>
+</div>
+<script language="JavaScript" type="text/javascript">
+function setMyPriceTable(){
+	jQuery("#ptStyles").val(JSON.stringify(ptStyles));
+	jQuery("#lbl_bgPaddingV").text(ptStyles.bgPaddingV);
+	jQuery("#lbl_bgPaddingH").text(ptStyles.bgPaddingH);
+	jQuery("#lbl_columnRoundedCornerRadius").text(ptStyles.columnRoundedCornerRadius);
+	jQuery("#lbl_columnHeaderTitleVerticalSize").text(ptStyles.columnHeaderTitleVerticalSize);
+	jQuery("#lbl_columnOuterSpacing").text(ptStyles.columnOuterSpacing);
+	jQuery("#lbl_columnInnerSpacing").text(ptStyles.columnInnerSpacing);
+	jQuery("#lbl_columnHeaderPDVerticalSize").text(ptStyles.columnHeaderPDVerticalSize);
+	jQuery("#chk_bgTransparent").prop('checked',ptStyles.bgTransparent);
+	jQuery("#chk_columnTitleSeparator").prop('checked',ptStyles.columnTitleSeparator);
+	jQuery("#chk_columnHeaderSeparator").prop('checked',ptStyles.columnHeaderSeparator);
+	jQuery("#chk_columnTitleDisableShade").prop('checked',ptStyles.columnTitleDisableShade);
+	jQuery("#chk_columnHeaderDisableShade").prop('checked',ptStyles.columnHeaderDisableShade);
+	jQuery("#chk_columnRoundedCorner").prop('checked',ptStyles.columnRoundedCorner);
+	
+	
+	if(ptStyles.columnRoundedCornerStyle=='all'){jQuery("#chk_columnRoundedCornerStyle").prop('checked',true);}else{jQuery("#chk_columnRoundedCornerStyle").prop('checked',false);}
+	
+	
+	jQuery("#pt_bgcolor").miniColors('value', ptStyles.bgcolor.toUpperCase());
+	jQuery("#pt_col_bgcolor").miniColors('value', ptStyles.columnBGColor.toUpperCase());
+	jQuery("#pt_col_bgcolor_hover").miniColors('value', ptStyles.columnBGColorHover.toUpperCase());
+	jQuery("#pt_col_header_bgcolor").miniColors('value', ptStyles.columnHeaderBGColor.toUpperCase());
+	jQuery("#pt_columnHeaderTitleBGColor").miniColors('value', ptStyles.columnHeaderTitleBGColor.toUpperCase());
+	jQuery("#pt_hilightedBGColor").miniColors('value', ptStyles.hilightedBGColor.toUpperCase());
+	jQuery("#pt_hilightedBGColorHover").miniColors('value', ptStyles.hilightedBGColorHover.toUpperCase());
+	jQuery("#pt_hilightedGlowColor").miniColors('value', ptStyles.hilightedGlowColor.toUpperCase());
+	jQuery("#pt_hilightedTitleBGColor").miniColors('value', ptStyles.hilightedTitleBGColor.toUpperCase());
+	jQuery("#pt_hilightedHeaderBGColor").miniColors('value', ptStyles.hilightedHeaderBGColor.toUpperCase());
+	jQuery("#pt_lbFeaturesBGColor").miniColors('value', ptStyles.lbFeaturesBGColor.toUpperCase());
+	jQuery("#pt_responsiveLabelSpColor").miniColors('value', ptStyles.responsiveLabelSpColor.toUpperCase());
+	jQuery("#pt_featuresBGColor").miniColors('value', ptStyles.featuresBGColor.toUpperCase());
+	jQuery("#pt_featuresBGColorH").miniColors('value', ptStyles.featuresBGColorH.toUpperCase());
+	
+	
+	
+	//alert(ptStyles.bgcolor);
+}
+jQuery(document).ready(function(jQuery){
+	
+	jQuery("#chk_columnTitleDisableShade").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.columnTitleDisableShade = true;
+			}else{ ptStyles.columnTitleDisableShade = false; }
+			setMyPriceTable();
+		});
+	jQuery("#chk_columnHeaderDisableShade").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.columnHeaderDisableShade = true;
+			}else{ ptStyles.columnHeaderDisableShade = false; }
+			setMyPriceTable();
+		});
+	jQuery("#chk_columnTitleSeparator").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.columnTitleSeparator = true;
+			}else{ ptStyles.columnTitleSeparator = false; }
+			setMyPriceTable();
+		});
+	jQuery("#chk_columnHeaderSeparator").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.columnHeaderSeparator = true;
+			}else{ ptStyles.columnHeaderSeparator = false; }
+			setMyPriceTable();
+		});
+		
+	jQuery("#chk_columnRoundedCornerStyle").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.columnRoundedCornerStyle = 'all';
+			}else{ ptStyles.columnRoundedCornerStyle = 'set'; }
+			setMyPriceTable();
+		});
+		
+		jQuery("#chk_columnRoundedCorner").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.columnRoundedCorner = true;
+			}else{ ptStyles.columnRoundedCorner = false; }
+			setMyPriceTable();
+		});
+		
+		jQuery("#chk_bgTransparent").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.bgTransparent = true;
+			}else{ ptStyles.bgTransparent = false; }
+			setMyPriceTable();
+		});
+		
+	jQuery(".pt_cp").miniColors({
+					letterCase: 'uppercase',
+					change: function(hex, rgb) {
+						//logData(hex, rgb);
+						var sid = jQuery(this).attr("SID");
+						ptStyles[sid] = hex;
+
+						//alert(sid);
+						setMyPriceTable();
+					}
+				});
+	jQuery( "#pt_slider_columnOuterSpacing" ).slider({
+			range: "min",
+			value:ptStyles.columnOuterSpacing,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.columnOuterSpacing = ui.value;
+				setMyPriceTable();
+			}
+		});
+	jQuery( "#pt_slider_columnInnerSpacing" ).slider({
+			range: "min",
+			value:ptStyles.columnInnerSpacing,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.columnInnerSpacing = ui.value;
+				setMyPriceTable();
+			}
+		});
+	jQuery( "#pt_slider_bgPaddingV" ).slider({
+			range: "min",
+			value:ptStyles.bgPaddingV,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.bgPaddingV = ui.value;
+				setMyPriceTable();
+			}
+		});
+		jQuery( "#pt_slider_bgPaddingH" ).slider({
+			range: "min",
+			value:ptStyles.bgPaddingH,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.bgPaddingH = ui.value;
+				setMyPriceTable();
+			}
+		});
+		jQuery( "#pt_slider_columnRoundedCornerRadius" ).slider({
+			range: "min",
+			value:ptStyles.columnRoundedCornerRadius,
+			min: 0,
+			max: 42,
+			slide: function( event, ui ) {
+				ptStyles.columnRoundedCornerRadius = ui.value;
+				setMyPriceTable();
+			}
+		});
+		jQuery( "#pt_slider_columnHeaderTitleVerticalSize" ).slider({
+			range: "min",
+			value:ptStyles.columnHeaderTitleVerticalSize,
+			min: 1,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.columnHeaderTitleVerticalSize = ui.value;
+				setMyPriceTable();
+			}
+		});
+		jQuery( "#pt_slider_columnHeaderPDVerticalSize" ).slider({
+			range: "min",
+			value:ptStyles.columnHeaderPDVerticalSize,
+			min: 1,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.columnHeaderPDVerticalSize = ui.value;
+				setMyPriceTable();
+			}
+		});
+		jQuery( "#ctltabs" ).tabs();
+		setMyPriceTable();
+				//jQuery("#pt_bgcolor").miniColors('value', ptStyles.bgcolor.toUpperCase());
+});
+
+</script>

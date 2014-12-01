@@ -1,0 +1,136 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<div class="ctl">
+    <label>Font: </label>
+    <select id="select_<?php echo $attr['ctl']; ?>Font" name="select_<?php echo $attr['ctl']; ?>Font">
+    <?php include('ctl.fontlist.phtml'); ?>
+	</select>
+        
+  </div>
+ <div class="ctl">
+    <label>Font Size: <span id="lbl_<?php echo $attr['ctl']; ?>FontSize"></span>px</label>
+    <div id="pt_slider_<?php echo $attr['ctl']; ?>FontSize"></div>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_<?php echo $attr['ctl']; ?>FontBold" />
+      Bold</label>
+  </div>
+  <div class="ctl">
+    <label>Font Color: </label>
+    <input type="text" name="pt_<?php echo $attr['ctl']; ?>FontColor" id="pt_<?php echo $attr['ctl']; ?>FontColor" class="pt_<?php echo $attr['ctl']; ?>_cp" SID='<?php echo $attr['ctl']; ?>FontColor' value="" />
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_<?php echo $attr['ctl']; ?>FontShadow" />
+      Enable Text Shadow</label>
+  </div>
+  <div class="ctl">
+    <label>Horizontal Position: <span id="lbl_<?php echo $attr['ctl']; ?>LengthH"></span>px</label>
+    <div id="pt_slider_<?php echo $attr['ctl']; ?>LengthH"></div>
+  </div>
+  <div class="ctl">
+    <label>Vertical Position: <span id="lbl_<?php echo $attr['ctl']; ?>LengthV"></span>px</label>
+    <div id="pt_slider_<?php echo $attr['ctl']; ?>LengthV"></div>
+  </div>
+  <div class="ctl">
+    <label>Blur Radius: <span id="lbl_<?php echo $attr['ctl']; ?>BlurRadius"></span>px</label>
+    <div id="pt_slider_<?php echo $attr['ctl']; ?>BlurRadius"></div>
+  </div>
+  <div class="ctl">
+    <label>Shadow Color: </label>
+    <input type="text" name="pt_<?php echo $attr['ctl']; ?>ShadowColor" id="pt_<?php echo $attr['ctl']; ?>ShadowColor" class="pt_<?php echo $attr['ctl']; ?>_cp" SID='<?php echo $attr['ctl']; ?>ShadowColor' value="" />
+  </div>
+  
+<script language="javascript">
+
+
+function <?php echo $attr['ctl']; ?>_setMyPriceTable(){
+	jQuery("#ptStyles").val(JSON.stringify(ptStyles));
+	jQuery('#select_<?php echo $attr['ctl']; ?>Font').val(ptStyles.<?php echo $attr['ctl']; ?>Font);
+	jQuery("#lbl_<?php echo $attr['ctl']; ?>FontSize").text(ptStyles.<?php echo $attr['ctl']; ?>FontSize);
+	jQuery("#chk_<?php echo $attr['ctl']; ?>FontBold").prop('checked',ptStyles.<?php echo $attr['ctl']; ?>FontBold);
+	jQuery("#pt_<?php echo $attr['ctl']; ?>FontColor").miniColors('value', ptStyles.<?php echo $attr['ctl']; ?>FontColor.toUpperCase());
+	jQuery("#chk_<?php echo $attr['ctl']; ?>FontShadow").prop('checked',ptStyles.<?php echo $attr['ctl']; ?>FontShadow);
+	jQuery("#lbl_<?php echo $attr['ctl']; ?>LengthH").text(ptStyles.<?php echo $attr['ctl']; ?>LengthH);
+	jQuery("#lbl_<?php echo $attr['ctl']; ?>LengthV").text(ptStyles.<?php echo $attr['ctl']; ?>LengthV);
+	jQuery("#lbl_<?php echo $attr['ctl']; ?>BlurRadius").text(ptStyles.<?php echo $attr['ctl']; ?>BlurRadius);
+	jQuery("#pt_<?php echo $attr['ctl']; ?>ShadowColor").miniColors('value', ptStyles.<?php echo $attr['ctl']; ?>ShadowColor.toUpperCase());
+}
+
+jQuery(document).ready(function(jQuery){	
+
+jQuery('#select_<?php echo $attr['ctl']; ?>Font').change(function() {
+  		ptStyles.<?php echo $attr['ctl']; ?>Font = jQuery(this).val(); 
+			<?php echo $attr['ctl']; ?>_setMyPriceTable();
+		});
+jQuery( "#pt_slider_<?php echo $attr['ctl']; ?>FontSize" ).slider({
+			range: "min",
+			value:ptStyles.<?php echo $attr['ctl']; ?>FontSize,
+			min: 8,
+			max: 72,
+			slide: function( event, ui ) {
+				ptStyles.<?php echo $attr['ctl']; ?>FontSize = ui.value;
+				<?php echo $attr['ctl']; ?>_setMyPriceTable();
+			}
+		});
+jQuery("#chk_<?php echo $attr['ctl']; ?>FontBold").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.<?php echo $attr['ctl']; ?>FontBold = true;
+			}else{ ptStyles.<?php echo $attr['ctl']; ?>FontBold = false; }
+			<?php echo $attr['ctl']; ?>_setMyPriceTable();
+		});
+jQuery("#chk_<?php echo $attr['ctl']; ?>FontShadow").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.<?php echo $attr['ctl']; ?>FontShadow = true;
+			}else{ ptStyles.<?php echo $attr['ctl']; ?>FontShadow = false; }
+			<?php echo $attr['ctl']; ?>_setMyPriceTable();
+		});
+jQuery( "#pt_slider_<?php echo $attr['ctl']; ?>LengthH" ).slider({
+			range: "min",
+			value:ptStyles.<?php echo $attr['ctl']; ?>LengthH,
+			min: -50,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.<?php echo $attr['ctl']; ?>LengthH = ui.value;
+				<?php echo $attr['ctl']; ?>_setMyPriceTable();
+			}
+		});
+jQuery( "#pt_slider_<?php echo $attr['ctl']; ?>LengthV" ).slider({
+			range: "min",
+			value:ptStyles.<?php echo $attr['ctl']; ?>LengthV,
+			min: -50,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.<?php echo $attr['ctl']; ?>LengthV = ui.value;
+				<?php echo $attr['ctl']; ?>_setMyPriceTable();
+			}
+		});
+jQuery( "#pt_slider_<?php echo $attr['ctl']; ?>BlurRadius" ).slider({
+			range: "min",
+			value:ptStyles.<?php echo $attr['ctl']; ?>BlurRadius,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.<?php echo $attr['ctl']; ?>BlurRadius = ui.value;
+				<?php echo $attr['ctl']; ?>_setMyPriceTable();
+			}
+		});
+		jQuery(".pt_<?php echo $attr['ctl']; ?>_cp").miniColors({
+					letterCase: 'uppercase',
+					change: function(hex, rgb) {
+						//logData(hex, rgb);
+						var sid = jQuery(this).attr("SID");
+						ptStyles[sid] = hex;
+
+						//alert(sid);
+						setMyPriceTable();
+					}
+				});
+		<?php echo $attr['ctl']; ?>_setMyPriceTable();
+		<?php global $font_functions; $font_functions[]= $attr['ctl'].'_setMyPriceTable();'; ?>
+});
+</script>

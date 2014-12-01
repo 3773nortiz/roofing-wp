@@ -1,0 +1,50 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<div class="ptaddfontarea">
+<table><tr><td><input type="text" id="ptinfontName" size="20" placeholder='Font Name' /></td><td><input type="text" id="ptinfontURL" size="40" placeholder='Font URL'  /></td><td><button type="button" id="addFontBtn">Add to list</button></td></tr></table>
+</div>
+<ul id="ptgfontlist">
+<?php if($gfonts) foreach($gfonts as $k=>$gfont): ?>
+<li id="lst<?php echo $k; ?>">
+<div class="ptGFont">
+<div class="fontname"><input type="hidden" name="ptgooglefonts[<?php echo $k; ?>][name]" value="<?php echo $gfont['name']; ?>" /><?php echo $gfont['name']; ?></div>
+<div class="fonturl"><input type="hidden" name="ptgooglefonts[<?php echo $k; ?>][url]" value="<?php echo $gfont['url']; ?>" /><?php echo $gfont['url']; ?></div>
+<a href="#lst<?php echo $k; ?>" class="del">remove</a></div>
+</li>
+<?php endforeach; ?>
+</ul>
+<script language="javascript">
+function validateURL(textval) {
+  var urlregex = new RegExp(
+        "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
+  return urlregex.test(textval);
+}
+function checkURL(value) {
+    var urlregex = new RegExp("^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
+    if (urlregex.test(value)) {
+        return (true);
+    }
+    return (false);
+}
+jQuery(document).ready(function(){
+	jQuery('#addFontBtn').click(function(){
+		var gfname =  jQuery('#ptinfontName').val();
+		var gfurl =  jQuery('#ptinfontURL').val();
+		if((gfname!='')&&(gfurl!='')){
+		var tli = jQuery('#ptgfontlist li').length;
+		var template = '<li id="lst'+(tli+1)+'"><div class="ptGFont"><div class="fontname"><input type="hidden" name="ptgooglefonts['+(tli+1)+'][name]" value="'+gfname+'" />'+gfname+'</div><div class="fonturl"><input type="hidden" name="ptgooglefonts['+(tli+1)+'][url]" value="'+gfurl+'" />'+gfurl+'</div><a href="#lst'+(tli+1)+'" class="del">remove</a></div></li>';
+		jQuery('#ptgfontlist').prepend(template);
+		jQuery('#ptinfontName').val('');
+		jQuery('#ptinfontURL').val('');
+		}
+	});
+	
+	jQuery('.ptGFont .del').live('click',function(){
+		jQuery(jQuery(this).attr('href')).remove();
+		return false;
+	});
+});
+</script>

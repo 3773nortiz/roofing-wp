@@ -1,0 +1,21 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+    <optgroup label="Default Fonts">
+          <option value="Arial" class="font-Arial">Arial</option>
+          <option value="Arial Black" class="font-Arial_Black">Arial Black</option>
+          <option value="Comic Sans MS" class="font-Comic_Sans_MS">Comic Sans MS</option>
+          <option value="Courier New" class="font-Courier_New">Courier New</option>
+          <option value="Georgia" class="font-Georgia">Georgia</option>
+          <option value="Impact" class="font-Impact">Impact</option>
+          <option value="Times New Roman" class="font-Times_New_Roman">Times New Roman</option>
+          <option value="Trebuchet MS" class="font-Trebuchet_MS">Trebuchet MS</option>
+          <option value="Verdana" class="font-Verdana">Verdana</option>
+          </optgroup>
+          <optgroup label="Google Fonts">
+          <?php foreach($gfonts as $k=>$gfont): ?>
+          <option value="<?php echo $gfont['name'];?>" style="font-family:'<?php echo $gfont['name'];?>'; font-size:14px;"><?php echo $gfont['name'];?></option>
+          <?php endforeach; ?>
+          </optgroup>

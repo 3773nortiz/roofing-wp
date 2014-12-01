@@ -1,0 +1,80 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<?php 
+$total_tables = count($table);
+$labels;
+$isLabeling = get_post_meta($id,'chk_labeling',true);
+if($isLabeling) $labels = array_shift($table);
+?>
+
+<div class="pricetable pricingtable<?php echo $id; ?>">
+  <div class="pricetable-inner">
+    <?php if($labels): ?>
+    <div class="pricetable-column labeling" style="width:<?php echo (100/$total_tables); ?>%">
+      <div class="pricetable-column-wall">
+        <div class="pricetable-header">
+          <div class="pricetable-fld-name"><?php print $labels['title'] ?></div>
+          <div class="pricetable-header-inner">
+            <div class="pricetable-fld-price"><span class="cur"><?php echo get_post_meta($id,'price_table_currencySymbol',true); ?></span><?php print $labels['price'] ?></div>
+            <p><?php print $labels['detail'] ?></p>
+          </div>
+        </div>
+        <ul class="features">
+          <?php if(!empty($labels['features'])) : ?>
+          <?php foreach($labels['features'] as $j => $feature) : ?>
+          <li <?php if(strlen($feature['sub'])>6): ?>class="hasToolTip"<?php endif; ?>> <?php print filterPtFeatureText($feature['title'],$id) ?>
+            <?php if(strlen($feature['sub'])>6): ?>
+            <small><?php print $feature['sub'] ?></small>
+            <?php endif; ?>
+          </li>
+          <?php endforeach ?>
+          <?php endif; ?>
+        </ul>
+        <div class="pricetable-feature-lbl">Features &raquo;</div>
+        <?php if(!get_post_meta($id,'pthideButtons',true)): ?>
+        <div class="pricetable-button-container<?php if($column['button']=='-'): ?> pricetable-button-container-hide<?php endif; ?>"> <a href="<?php print empty($column['url']) ? '#' : $column['url'] ?>"> <span class="pricetable-gradient"><span class="pricetable-noise"><?php print empty($column['button']) ? __('Select', 'pricetable') : $column['button'] ?></span></span> </a> </div><?php endif; ?>
+        <div class="labelTitle"><?php echo get_post_meta($id,'ptlbTitle',true); ?></div>
+      </div>
+      </div>
+      <?php endif; ?>
+      <?php foreach((array) $table as $i => $column) : ?>
+      <div class="pricetable-column <?php if($column['highlight']): ?>highlight<?php endif; ?>" style="width:<?php echo (100/$total_tables); ?>%">
+      <div class="pricetable-column-wall">
+        <div class="pricetable-header">
+          <div class="pricetable-fld-name"><?php print $column['title'] ?></div>
+          <div class="pricetable-header-inner">
+            <div class="pricetable-fld-price"><span class="cur"><?php echo get_post_meta($id,'price_table_currencySymbol',true); ?></span><?php print $column['price'] ?></div>
+            <p><?php print $column['detail'] ?></p>
+            <?php if($column['ribbon']): ?>
+            <div class="ribbon-wrapper-green"><div class="ribbon-green"><?php print $column['ribbontxt'] ?></div></div>
+            <?php endif; ?>
+          </div>
+        </div>
+        <ul class="features">
+          <?php if(!empty($column['features'])) : $cnt = 0; ?>
+          <?php foreach($column['features'] as $j => $feature) : ?>
+          <li <?php if(strlen($feature['sub'])>6): ?>class="hasToolTip"<?php endif; ?>>
+            <?php if($labels): ?>
+            <span><?php echo $labels['features'][$cnt]['title']; $cnt++; ?></span>
+            <?php endif; ?>
+            <?php print filterPtFeatureText($feature['title'],$id); ?>
+            <?php if(strlen($feature['sub'])>6): ?>
+            <small><?php print $feature['sub'] ?></small>
+            <?php endif; ?>
+          </li>
+          <?php endforeach ?>
+          <?php endif; ?>
+        </ul>
+        <div class="ribbon">HOT</div>
+        <?php if(!get_post_meta($id,'pthideButtons',true)): ?>
+        <div class="pricetable-button-container<?php if($column['button']=='-'): ?> pricetable-button-container-hide<?php endif; ?>"> <a href="<?php print empty($column['url']) ? '#' : $column['url'] ?>"><?php print empty($column['button']) ? __('Select', 'pricetable') : $column['button'] ?></a> </div>
+        <?php endif; ?>
+      </div>
+    </div>
+    <?php endforeach ?>
+    <div class="pricetable-clear"></div>
+  </div>
+</div>

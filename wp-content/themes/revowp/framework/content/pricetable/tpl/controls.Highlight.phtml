@@ -1,0 +1,174 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<div class="pt-settings-stage">
+  <div class="ctl">
+    <label>BG Color: </label>
+    <input type="text" name="pt_hilightedBGColor" id="pt_hilightedBGColor" class="pt_cp" sid='hilightedBGColor' value="" />
+  </div>
+  <div class="ctl">
+    <label>BG Color Hover: </label>
+    <input type="text" name="pt_hilightedBGColorHover" id="pt_hilightedBGColorHover" class="pt_cp" sid='hilightedBGColorHover' value="" />
+  </div>
+   <div class="ctl">
+    <label>Scale: <span id="lbl_hilightedScale"></span>%</label>
+    <div id="pt_slider_hilightedScale"></div>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_hilightedRoundedCorners" />
+      Enable Rounded Corners</label>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_hilightedGlow" />
+      Enable Glow</label>
+  </div>
+   <div class="ctl">
+    <label>Glow Color: </label>
+    <input type="text" name="pt_hilightedGlowColor" id="pt_hilightedGlowColor" class="pt_cp" sid='hilightedGlowColor' value="" />
+  </div>
+  <div class="ctl">
+    <label>Glow Radius: <span id="lbl_hilightedGlowRadius"></span>px</label>
+    <div id="pt_slider_hilightedGlowRadius"></div>
+  </div>
+</div>
+<strong>Title</strong>
+<div class="pt-settings-stage">
+<div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_hilightedChangeTitle" />
+     Change Title</label>
+  </div>
+  <div class="ctl">
+    <label>Title BG Color: </label>
+    <input type="text" name="pt_hilightedTitleBGColor" id="pt_hilightedTitleBGColor" class="pt_cp" sid='hilightedTitleBGColor' value="" />
+  </div>
+  <?php $attr = array('var'=>'ptStyles','ctl'=>'hilightedTitle'); include('ctl.font.mini.phtml'); ?>
+</div>
+<strong>Price</strong>
+<div class="pt-settings-stage">
+<div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_hilightedChangeHeader" />
+     Change Price Style</label>
+  </div>
+  <div class="ctl">
+    <label>Price BG Color: </label>
+    <input type="text" name="pt_hilightedHeaderBGColor" id="pt_hilightedHeaderBGColor" class="pt_cp" sid='hilightedHeaderBGColor' value="" />
+  </div>
+  <?php $attr = array('var'=>'ptStyles','ctl'=>'hilightedHeader'); include('ctl.font.mini.phtml'); ?>
+</div>
+<strong>Details</strong>
+<div class="pt-settings-stage">
+<div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_hilightedChangePD" />
+     Change Details Style</label>
+  </div>
+   <?php $attr = array('var'=>'ptStyles','ctl'=>'hilightedPD'); include('ctl.font.mini.phtml'); ?>
+</div>
+<strong>Features</strong>
+<div class="pt-settings-stage">
+<div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_hilightedChangeFeatures" />
+     Change Features Style</label>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_featuresTransparentBGH" value="true" />
+      Transparent Background</label>
+  </div>
+  <div class="ctl">
+    <label>Background Color: </label>
+    <input type="text" name="pt_featuresBGColorH" id="pt_featuresBGColorH" class="pt_cp" sid='featuresBGColorH' value="" />
+  </div>
+   <?php $attr = array('var'=>'ptStyles','ctl'=>'hilightedFeature'); include('ctl.font.mini.phtml'); ?>
+</div>
+<script language="JavaScript" type="text/javascript">
+function setMyPriceTableHilighted(){
+	jQuery("#ptStyles").val(JSON.stringify(ptStyles));
+	jQuery("#chk_hilightedRoundedCorners").prop('checked',ptStyles.hilightedRoundedCorners);
+	jQuery("#chk_hilightedGlow").prop('checked',ptStyles.hilightedGlow);
+	jQuery("#chk_hilightedChangeTitle").prop('checked',ptStyles.hilightedChangeTitle);
+	jQuery("#chk_hilightedChangeHeader").prop('checked',ptStyles.hilightedChangeHeader);
+	jQuery("#chk_hilightedChangePD").prop('checked',ptStyles.hilightedChangePD);
+	jQuery("#chk_featuresTransparentBGH").prop('checked',ptStyles.featuresTransparentBGH);
+	jQuery("#chk_hilightedChangeFeatures").prop('checked',ptStyles.hilightedChangeFeatures);
+	jQuery("#lbl_hilightedScale").text(ptStyles.hilightedScale);
+	jQuery("#lbl_hilightedGlowRadius").text(ptStyles.hilightedGlowRadius);
+	
+}
+
+jQuery(document).ready(function(jQuery){
+	jQuery("#chk_featuresTransparentBGH").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.featuresTransparentBGH = true;
+			}else{ ptStyles.featuresTransparentBGH = false; }
+			setMyPriceTableHilighted();
+		});
+	jQuery("#chk_hilightedRoundedCorners").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.hilightedRoundedCorners = true;
+			}else{ ptStyles.hilightedRoundedCorners = false; }
+			setMyPriceTableHilighted();
+		});
+	jQuery("#chk_hilightedGlow").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.hilightedGlow = true;
+			}else{ ptStyles.hilightedGlow = false; }
+			setMyPriceTableHilighted();
+		});
+		
+		jQuery("#chk_hilightedChangeTitle").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.hilightedChangeTitle = true;
+			}else{ ptStyles.hilightedChangeTitle = false; }
+			setMyPriceTableHilighted();
+		});
+		jQuery("#chk_hilightedChangeHeader").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.hilightedChangeHeader = true;
+			}else{ ptStyles.hilightedChangeHeader = false; }
+			setMyPriceTableHilighted();
+		});
+		
+		jQuery("#chk_hilightedChangePD").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.hilightedChangePD = true;
+			}else{ ptStyles.hilightedChangePD = false; }
+			setMyPriceTableHilighted();
+		});
+		jQuery("#chk_hilightedChangeFeatures").click(function(){
+			if(jQuery(this).prop('checked')){
+				ptStyles.hilightedChangeFeatures = true;
+			}else{ ptStyles.hilightedChangeFeatures = false; }
+			setMyPriceTableHilighted();
+		});
+		
+	jQuery( "#pt_slider_hilightedScale" ).slider({
+			range: "min",
+			value:ptStyles.hilightedScale,
+			min: 0,
+			max: 100,
+			slide: function( event, ui ) {
+				ptStyles.hilightedScale = ui.value;
+				setMyPriceTableHilighted();
+			}
+		});
+	jQuery( "#pt_slider_hilightedGlowRadius" ).slider({
+			range: "min",
+			value:ptStyles.hilightedGlowRadius,
+			min: 0,
+			max: 50,
+			slide: function( event, ui ) {
+				ptStyles.hilightedGlowRadius = ui.value;
+				setMyPriceTableHilighted();
+			}
+		});
+	setMyPriceTableHilighted();
+});
+</script>

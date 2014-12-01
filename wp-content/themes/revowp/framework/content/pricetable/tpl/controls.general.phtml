@@ -1,0 +1,29 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<div class="pt-settings-stage">
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_bgTransparent" />
+      Background Transparent</label>
+  </div>
+  <div class="ctl">
+    <label>Background Color: </label>
+    <input type="text" name="pt_bgcolor" id="pt_bgcolor" class="pt_cp" sid='bgcolor' value="" />
+  </div>
+  <div class="ctl">
+    <label>Vertical Spacing: <span id="lbl_bgPaddingV"></span>px</label>
+    <div id="pt_slider_bgPaddingV"></div>
+  </div>
+  <div class="ctl">
+    <label>Horizontal Spacing: <span id="lbl_bgPaddingH"></span>px</label>
+    <div id="pt_slider_bgPaddingH"></div>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" name="pt_hideButtons" value="true" <?php if(get_post_meta($post->ID,'pthideButtons',true)): ?>checked="checked"<?php endif; ?> />
+      Hide All Buttons</label>
+  </div>
+</div>

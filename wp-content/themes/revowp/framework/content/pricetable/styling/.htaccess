@@ -1,0 +1,3 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule pricetable-style.css(.*)  pricetable-style.php$1 [NC]

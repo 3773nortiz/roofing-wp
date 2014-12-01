@@ -1,0 +1,67 @@
+<?php /*///////////////// AUTHOR INFO //////////////
+		//// NAME: ZEEQ                         ////
+		//// WEBSITE: www.hzcreative.com        ////
+		//// EMAIL: me.hzcreative@gmail.com     ////
+		////////////////////////////////////////////*/ ?>
+<strong>Title Area</strong>
+<div class="pt-settings-stage">
+  <div class="ctl">
+    <label>BG Color: </label>
+    <input type="text" name="pt_columnHeaderTitleBGColor" id="pt_columnHeaderTitleBGColor" class="pt_cp" sid='columnHeaderTitleBGColor' value="" />
+  </div>
+  <div class="ctl">
+    <label>Vertical Spacing: <span id="lbl_columnHeaderTitleVerticalSize"></span>px</label>
+    <div id="pt_slider_columnHeaderTitleVerticalSize"></div>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_columnTitleSeparator" />
+      Enable Separators</label>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_columnTitleDisableShade" />
+      Disable Gradient Shade</label>
+  </div>
+</div>
+<strong>Title Font</strong>
+<div class="pt-settings-stage">
+  <?php $attr = array('var'=>'ptStyles','ctl'=>'columnTitle'); include('ctl.font.phtml'); ?>
+</div>
+<strong>Price Area</strong>
+<div class="pt-settings-stage">
+  <div class="ctl">
+    <label>Background Color: </label>
+    <input type="text" name="pt_col_header_bgcolor" id="pt_col_header_bgcolor" class="pt_cp" sid='columnHeaderBGColor' value="" />
+  </div>
+  <div class="ctl">
+    <label>Vertical Spacing: <span id="lbl_columnHeaderPDVerticalSize"></span>px</label>
+    <div id="pt_slider_columnHeaderPDVerticalSize"></div>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_columnHeaderSeparator" />
+      Enable Separators</label>
+  </div>
+  <div class="ctl">
+    <label>
+      <input type="checkbox" id="chk_columnHeaderDisableShade" />
+      Disable Gradient Shade</label>
+  </div>
+</div>
+<strong>Price Font</strong>
+<div class="pt-settings-stage">
+<?php $attr = array('var'=>'ptStyles','ctl'=>'columnPrice'); include('ctl.font.phtml'); ?>
+</div>
+<strong>Price Symbol</strong>
+<div class="pt-settings-stage">
+<div class="ctl">
+    <label>Currency Symbol</label>
+    <input type="text" id="txt_currencySymbol" name="txt_currencySymbol" value="<?php echo get_post_meta($post->ID,'price_table_currencySymbol',true); ?>" />
+  </div>
+<?php $attr = array('var'=>'ptStyles','ctl'=>'columnPriceSymbol'); include('ctl.font.phtml'); ?>
+</div>
+<strong>Details Font</strong>
+<div class="pt-settings-stage">
+<?php $attr = array('var'=>'ptStyles','ctl'=>'columnPD'); include('ctl.font.phtml'); ?>
+</div>
